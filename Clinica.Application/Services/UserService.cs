@@ -14,6 +14,10 @@ namespace Clinica.Application.Services
 
         public async Task<int> CreateAsync(CreateUserDto request)
         {
+            var findUserByCpf = await _repository.FindByCpf(request.Cpf);
+            if (findUserByCpf)
+                throw new ApplicationException("Ja existe um usuario com esse CPF cadastrado!");
+
             var userId = await _repository.CreateAsync(_mapper.Map<User>(request));
 
             //Cria o endereço

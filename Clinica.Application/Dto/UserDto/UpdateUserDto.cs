@@ -1,4 +1,6 @@
-﻿using Clinica.Domain.Enums;
+﻿using Clinica.Application.Dto.Address;
+using Clinica.Domain.Entities;
+using Clinica.Domain.Enums;
 
 namespace Clinica.Application.Dto.UserDto;
 

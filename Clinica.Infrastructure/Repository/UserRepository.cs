@@ -29,9 +29,16 @@ namespace Clinica.Infrastructure.Repository
 
         public async Task<bool> DeleteAsync(int id)
         {
-            string query = @"DELETE * FROM Users Where Id = @Id";
+            string query = @"DELETE FROM Users Where Id = @Id";
             using var connection = _context.CreateConnection();
             return await connection.ExecuteAsync(query, new { Id = id }) > 0;
+        }
+
+        public async Task<bool> FindByCpf(string cpf)
+        {
+            string query = @"SELECT * FROM Users Where Cpf = @Cpf";
+            using var connection = _context.CreateConnection();
+            return await connection.QueryFirstOrDefaultAsync<int>(query, new { Cpf = cpf }) > 0;
         }
 
         public async Task<IEnumerable<User?>> GetAllAsync()
@@ -71,12 +78,15 @@ namespace Clinica.Infrastructure.Repository
 
         public async Task<bool> UpdateAsync(User request)
         {
+            request.UpdatedAt = DateTime.Now;
             string query = @"UPDATE Users
                            SET 
                                 Name = @Name,
                                 DateOfBirth = @DateOfBirth,
                                 Cpf = @Cpf,
                                 Sex = @Sex,
+                                Status = @Status,
+                                UpdatedAt = @UpdateAt
                                 WHERE Id = @Id";
 
             using var connection = _context.CreateConnection();

@@ -36,26 +36,77 @@ namespace Clinica.Infrastructure.Repository
 
         public async Task<IEnumerable<UserAppointment?>> GetAllAsync()
         {
-            string query = @"SELECT * FROM appointments";
+            string query = @"
+                        SELECT 
+                            a.Id,
+                            a.AppointmentDate,
+                            a.Description,
+                            a.Status,
+                            a.UserId,
+                            a.CreatedAt,
+                            a.UpdatedAt,
+
+                            b.Id as UserIdSplit,
+                            b.Name,
+                            b.DateOfBirth,
+                            b.Cpf,
+                            b.Sex,
+                            b.Status,
+                            b.CreatedAt as UserCreatedAt,
+                            b.UpdatedAt as UserUpdatedAt
+                        FROM appointments a
+                        INNER JOIN users b ON a.userId = b.Id
+                        ";
             using var connection = _context.CreateConnection();
-            return await connection.QueryAsync<UserAppointment>(query);
+            return await connection.QueryAsync<UserAppointment, User, UserAppointment>(query, (appointment, user) =>
+            {
+                appointment.User = user;
+                return appointment;
+            }, splitOn: "UserIdSplit");
         }
 
         public async Task<UserAppointment?> GetByIdAsync(int id)
         {
-            string query = @"SELECT * FROM appointments WHERE Id = @Id";
+            string query = @"
+                        SELECT 
+                            a.Id,
+                            a.AppointmentDate,
+                            a.Description,
+                            a.Status,
+                            a.UserId,
+                            a.CreatedAt,
+                            a.UpdatedAt,
+
+                            b.Id as UserIdSplit,
+                            b.Name,
+                            b.DateOfBirth,
+                            b.Cpf,
+                            b.Sex,
+                            b.Status,
+                            b.CreatedAt as UserCreatedAt,
+                            b.UpdatedAt as UserUpdatedAt
+                        FROM appointments a
+                        INNER JOIN users b ON a.userId = b.Id
+                        ";
             using var connection = _context.CreateConnection();
-            return await connection.QueryFirstOrDefaultAsync<UserAppointment?>(query, new { Id = id });
+            var result = await connection.QueryAsync<UserAppointment, User, UserAppointment>(query, (appointment, user) =>
+            {
+                appointment.User = user;
+                return appointment;
+            }, new { Id = id }, splitOn: "UserIdSplit");
+            return result.FirstOrDefault();
         }
 
         public async Task<bool> UpdateAsync(UserAppointment request)
         {
+            request.UpdatedAt = DateTime.Now;
             string query = @"UPDATE appointments
                             SET
                                 AppointmentDate = @AppointmentDate,
                                 Description = @Description,
                                 Status = @Status,
-                                UserId = @UserId
+                                UserId = @UserId,
+                                UpdatedAt = @UpdatedAt
                             WHERE Id = @Id";
             using var connection = _context.CreateConnection();
             return await connection.ExecuteAsync(query, request) > 0;

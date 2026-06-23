@@ -5,6 +5,7 @@ C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\De
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.AssemblyInfoInputs.cache
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.AssemblyInfo.cs
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.csproj.CoreCompileInputs.cache
+C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.sourcelink.json
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.dll
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\refint\Clinica.Domain.dll
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Domain\obj\Debug\net8.0\Clinica.Domain.pdb

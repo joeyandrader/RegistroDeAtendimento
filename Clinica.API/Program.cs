@@ -21,6 +21,16 @@ builder.Services
 builder.Services
     .AppLoadDependencyInjection();
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(name: "DefaultCors", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173/")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
 
@@ -31,9 +41,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<ExceptionMiddleware>();
+//app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseCors("DefaultCors");
 
 app.UseAuthorization();
 

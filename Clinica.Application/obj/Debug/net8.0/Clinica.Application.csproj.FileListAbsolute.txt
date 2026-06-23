@@ -8,6 +8,7 @@ C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\o
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica.Application.AssemblyInfoInputs.cache
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica.Application.AssemblyInfo.cs
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica.Application.csproj.CoreCompileInputs.cache
+C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica.Application.sourcelink.json
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica..2911F8A5.Up2Date
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\Clinica.Application.dll
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.Application\obj\Debug\net8.0\refint\Clinica.Application.dll

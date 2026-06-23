@@ -21,5 +21,12 @@ namespace Clinica.API.Controllers
             var result = await _addressService.GetByIdAsync(id);
             return Ok(result);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateAddressDto request)
+        {
+            var result = await _addressService.UpdateAsync(request);
+            return Ok(result);
+        }
     }
 }

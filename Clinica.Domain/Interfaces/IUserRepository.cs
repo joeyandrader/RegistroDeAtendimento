@@ -9,4 +9,5 @@ public interface IUserRepository
     Task<int> CreateAsync(User request);
     Task<bool> UpdateAsync(User request);
     Task<bool> DeleteAsync(int id);
+    Task<bool> FindByCpf(string cpf);
 }

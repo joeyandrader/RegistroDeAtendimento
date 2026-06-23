@@ -15,6 +15,11 @@ namespace Clinica.Application.Services
     {
         public async Task<int> CreateAsync(CreateUserAppointmentDto request)
         {
+            var currentDate = DateTime.Now;
+            var endDate = currentDate.Date.AddDays(1).AddTicks(-1);
+            if (request.AppointmentDate < currentDate || request.AppointmentDate > endDate)
+                throw new ApplicationException("Não é permitido criar o agendamento selecione uma data atual e a hora.");
+
             return await _userAppointmentRepository.CreateAsync(_mapper.Map<UserAppointment>(request));
         }
 
@@ -35,6 +40,10 @@ namespace Clinica.Application.Services
 
         public async Task<bool> UpdateAsync(UpdateUserAppointmentDto request)
         {
+            var currentDate = DateTime.Now;
+            var endDate = currentDate.Date.AddDays(1).AddTicks(-1);
+            if (request.AppointmentDate < currentDate || request.AppointmentDate > endDate)
+                throw new ApplicationException("Não é permitido criar o agendamento selecione uma data atual e a hora.");
             return await _userAppointmentRepository.UpdateAsync(_mapper.Map<UserAppointment>(request));
         }
     }

@@ -33,6 +33,8 @@ CREATE TABLE appointments (
     AppointmentDate TIMESTAMP NOT NULL,
     Status INT NOT NULL,
     Description VARCHAR(255) NOT NULL,
+    CreatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP NULL,
 
     CONSTRAINT fk_user
     FOREIGN KEY (UserId) REFERENCES users(id)

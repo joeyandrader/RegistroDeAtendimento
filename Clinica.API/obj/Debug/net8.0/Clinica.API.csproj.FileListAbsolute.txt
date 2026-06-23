@@ -37,6 +37,7 @@ C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\Clinica.API.csproj.CoreCompileInputs.cache
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\Clinica.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\Clinica.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\Clinica.API.sourcelink.json
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\joeya\OneDrive\Desktop\TesteMedico\API\ClinicaAPI\Clinica.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
